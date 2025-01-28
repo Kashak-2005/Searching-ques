@@ -1,0 +1,21 @@
+public class FloorOfNumber {
+    public static void main(String[] args) {
+        int[] arr = {1, 3, 5, 7, 9};
+        int target = 6;
+
+        int floor = findFloor(arr, target);
+        System.out.println("Floor of " + target + ": " + (floor != -1 ? floor : "No floor exists"));
+    }
+
+    public static int findFloor(int[] arr, int target) {
+        int floor = -1;
+        for (int num : arr) {
+            if (num <= target) {
+                floor = num;
+            } else {
+                break;
+            }
+        }
+        return floor;
+    }
+}
