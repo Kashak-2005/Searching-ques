@@ -1,0 +1,28 @@
+public class LinearSearchRecursive {
+    public static int linearSearch(int[] array, int target, int index) {
+        // Base case: if index reaches array length
+        if (index >= array.length) {
+            return -1; // Target not found
+        }
+
+        // Check if current element matches target
+        if (array[index] == target) {
+            return index;
+        }
+
+        // Recursive call for next index
+        return linearSearch(array, target, index + 1);
+    }
+
+    public static void main(String[] args) {
+        int[] array = {10, 20, 30, 40, 50};
+        int target = 30;
+        int result = linearSearch(array, target, 0); // Start search from index 0
+
+        if (result != -1) {
+            System.out.println("Element found at index: " + result);
+        } else {
+            System.out.println("Element not found.");
+        }
+    }
+}
